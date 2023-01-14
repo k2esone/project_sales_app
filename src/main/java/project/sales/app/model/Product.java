@@ -27,6 +27,6 @@ public class Product {
     @OneToMany(mappedBy = "product")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private Delivery delivery;
+    private Set<Delivery> deliveries;
 
 }
