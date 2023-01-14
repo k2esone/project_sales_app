@@ -7,6 +7,7 @@ import java.util.Set;
 
 @Data
 @Entity
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Customer {
@@ -17,7 +18,7 @@ public class Customer {
 
     private String name;
     private String address;
-    private String NIP;
+    private String nip;
 
     @OneToMany(mappedBy = "customer")
     @ToString.Exclude
