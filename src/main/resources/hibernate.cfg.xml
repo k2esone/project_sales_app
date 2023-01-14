@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3307/project_sales_app?severTimezone=Europe/Warsaw&amp;createDatabaseIfNotExist=true</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Definicja modeli -->
+        <mapping class="project.sales.app.model.CorrectiveInvoice"/>
+        <mapping class="project.sales.app.model.Customer"/>
+        <mapping class="project.sales.app.model.Delivery"/>
+        <mapping class="project.sales.app.model.Invoice"/>
+        <mapping class="project.sales.app.model.Order"/>
+        <mapping class="project.sales.app.model.OrderItem"/>
+        <mapping class="project.sales.app.model.Product"/>
+        <mapping class="project.sales.app.model.Return"/>
+    </session-factory>
+</hibernate-configuration>
