@@ -3,6 +3,8 @@ package project.sales.app.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 
 @Data
 @Entity
@@ -13,6 +15,8 @@ public class Return {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private LocalDateTime localDateTime;
 
     private int quantity;
 

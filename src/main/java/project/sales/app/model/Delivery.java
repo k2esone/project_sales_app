@@ -18,8 +18,9 @@ public class Delivery {
 
     private int quantity;
     private double price;
+
     @CreationTimestamp
-    LocalDateTime localDateTime;
+    private LocalDateTime localDateTime;
 
     @ManyToOne
     @ToString.Exclude

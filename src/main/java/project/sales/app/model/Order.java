@@ -18,7 +18,7 @@ public class Order {
     private Long id;
 
     @CreationTimestamp
-    LocalDateTime localDateTime;
+    private LocalDateTime localDateTime;
 
     @ManyToOne
     @ToString.Exclude

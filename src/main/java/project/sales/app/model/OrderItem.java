@@ -16,12 +16,12 @@ public class OrderItem {
     private int quantity;
     private double price;
 
-    @OneToMany
+    @ManyToOne
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Product product;
 
-    @OneToMany
+    @ManyToOne
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Order order;

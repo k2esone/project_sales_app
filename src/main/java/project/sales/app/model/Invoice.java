@@ -18,7 +18,7 @@ public class Invoice {
     private Long id;
 
     @CreationTimestamp
-    LocalDateTime localDateTime;
+    private LocalDateTime localDateTime;
 
     @OneToMany(mappedBy = "invoice")
     @ToString.Exclude
