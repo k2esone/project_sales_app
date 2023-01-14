@@ -1,9 +1,7 @@
 package project.sales.app.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
@@ -23,11 +21,22 @@ public class Order {
     LocalDateTime localDateTime;
 
     @ManyToOne
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Invoice invoice;
+
     @ManyToOne
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Customer customer;
+
     @OneToMany(mappedBy = "order")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Set<Return> returns;
+
     @OneToMany(mappedBy = "order")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Set<OrderItem> orderItems;
 }

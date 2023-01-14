@@ -1,9 +1,7 @@
 package project.sales.app.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @Entity
@@ -19,8 +17,12 @@ public class OrderItem {
     private double price;
 
     @OneToMany
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Product product;
 
     @OneToMany
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Order order;
 }

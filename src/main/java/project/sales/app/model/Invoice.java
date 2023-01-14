@@ -1,9 +1,7 @@
 package project.sales.app.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
@@ -23,7 +21,12 @@ public class Invoice {
     LocalDateTime localDateTime;
 
     @OneToMany(mappedBy = "invoice")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Set<CorrectiveInvoice> correctiveInvoices;
+
     @OneToMany(mappedBy = "invoice")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Set<Order> orders;
 }

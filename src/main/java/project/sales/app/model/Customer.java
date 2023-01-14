@@ -1,9 +1,7 @@
 package project.sales.app.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Set;
 
@@ -22,5 +20,7 @@ public class Customer {
     private String NIP;
 
     @OneToMany(mappedBy = "customer")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Set<Order> orders;
 }
