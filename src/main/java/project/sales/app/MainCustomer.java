@@ -2,6 +2,7 @@ package project.sales.app;
 
 import project.sales.app.commands.AddOrder;
 import project.sales.app.commands.Command;
+import project.sales.app.commands.ProductList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,8 @@ public class MainCustomer {
 
         List<Command> listaKomend = new ArrayList<>(
                 List.of(
-                        new AddOrder()
+                        new AddOrder(),
+                        new ProductList()
                 )
         );
         String komenda;

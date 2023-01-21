@@ -4,6 +4,8 @@ import project.sales.app.database.DataAccessObject;
 import project.sales.app.model.Delivery;
 import project.sales.app.model.Product;
 
+import java.util.Optional;
+
 public class AddProduct implements Command {
 
     private DataAccessObject<Product> dao = new DataAccessObject<Product>();
@@ -31,5 +33,10 @@ public class AddProduct implements Command {
                 .build();
 
         dao.insert(product);
+    }
+
+    @Override
+    public Optional<Command> getFollowUpCommand() {
+        return Optional.empty();
     }
 }

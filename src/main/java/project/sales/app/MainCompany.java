@@ -4,6 +4,7 @@ import project.sales.app.commands.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class MainCompany {
     public static void main(String[] args) {
@@ -13,7 +14,9 @@ public class MainCompany {
                         new AddProduct(),
                         new AddDelivery(),
                         new AddCustomer(),
-                        new AddOrder()
+                        new AddOrder(),
+                        new AddOrderItem(),
+                        new ProductList()
                 )
         );
         String komenda;
@@ -30,6 +33,11 @@ public class MainCompany {
             for (Command dostepnaKomenda : listaKomend) {
                 if (dostepnaKomenda.getKomenda().equalsIgnoreCase(komenda)) {
                     dostepnaKomenda.obsluga();
+
+                    Optional<Command> followUpCommand = dostepnaKomenda.getFollowUpCommand();
+                    if (followUpCommand.isPresent()){
+                        followUpCommand.get().obsluga();
+                    }
                 }
             }
         } while (!komenda.equalsIgnoreCase("exit"));

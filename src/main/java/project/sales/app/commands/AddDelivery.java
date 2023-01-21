@@ -45,4 +45,9 @@ public class AddDelivery implements Command{
 
 
     }
+
+    @Override
+    public Optional<Command> getFollowUpCommand() {
+        return Optional.empty();
+    }
 }
